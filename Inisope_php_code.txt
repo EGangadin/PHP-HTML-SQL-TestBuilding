@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="en">
+<head style="color:white;">
+  <title>Inisope Employee Directory</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300' rel='stylesheet' type='text/css'>
+	<style>
+table, th, td {
+     border: 1px solid white;
+}
+</style>
+</head>
+<body>
+	<div class="content">
+		<div class="wrap">
+			<div class="container">
+				<p><img class="img-responsive" src="images/Inisope_logo.jpg" title=""></p>
+			</div>
+			<div class="grid">
+				<p><img class ="img-responsive" src="images/dograin1.png" title="">
+				</p>
+				<p><img src="images/coming.png" title=""></p>
+				<h3>This is Inisope, we are currently in beta testing phase, Please keep your dogs dry for the time being!
+				</h3>
+	
+<?php
+				//Sends the query
+$servername = "localhost";
+$username = "";
+$password = "";
+$dbname = "Iniscope";
+				
+//if (isset($_POST['SELECT'])) {
+	$lastName = $_POST['LAST_NAME'];
+
+echo "<font color='white'><center><br>$lastName<br></center>"; 
+//}
+// Create connection
+				{
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+$sql = "SELECT * FROM Inisope_Employees WHERE LAST_NAME = '$lastName'"; 
+$result = $conn->query($sql); 
+				} 
+
+// Check connection
+if (!$conn) {
+	die("Connection failed: " . mysqli_connect_error());
+
+} 
+
+// echo "Connected successfully";
+	
+
+if ($result->num_rows > 0)
+
+{
+  //echo $result->num_rows;
+ echo "<font color='white'><center><table><br><tr><th>EMPLOYEE_ID</th><th>FIRST_NAME</th><th>LAST_NAME</th><th>PHONE_NUMBER</th></center></tr>";
+	//output data of each row
+    while ($row = $result->fetch_assoc()) 
+		{ 
+			 echo "<tr><td>" . $row["EMPLOYEE_ID"]. "</td><td>" . $row["FIRST_NAME"]. "</td><td>" . $row["LAST_NAME"]. "</td><td>" . $row["PHONE_NUMBER"]. "</td></tr>";
+			
+			//printf ("%s, %s, %s, %s<br>", $row["EMPLOYEE_ID"], $row["FIRST_NAME"], $row["LAST_NAME"], $row["PHONE_NUMBER"]);
+							}
+		echo "</table>";
+	
+       
+}	
+
+if ($result->num_rows == 0) 	
+{
+	echo "<font color='white'><br>There are no entries in which you searched, please try again <br>";
+}
+	
+?>
+				<div class="clear"></div>
+			<div class="footer">
+				<p class="a">
+					<a href="https://www.facebook.com/?_rdr=p" target="_blank"><img src="images/facebook.png" title=""></a>
+					<a href="https://twitter.com/?lang=en" target="_blank"><img src="images/twitter.png" title=""></a>
+				</p>
+				<p>Copyright 2013&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a> </p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+		
+		<script> {
+document.title = "This is Inisope php page";
+}
+</script>
+</body>
+
+</html>
+
+</body>
+</html>

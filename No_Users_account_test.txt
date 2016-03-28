@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://preview.cq6bhle8jvm18aorw771ngxkv1fez5mi0yw88uvstjtf0f6r.box.codeanywhere.com/" />
+<title>This is to lookup a user that is not in the directory</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">No Value Return</td></tr>
+</thead><tbody>
+	//This is where the IDE runs a script to open the Inisope homepage, 
+	//then it looks for the input area for where the search takes place
+	//Then entering in the name for the search to be performed
+	//Comment by Esau Gangadin
+<tr>
+	<td>open</td>
+	<td>/Inisope/Inisope_012916.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=LAST_NAME</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=LAST_NAME</td>
+	<td>Gangadin</td>
+</tr>
+<tr>
+	<td>clickAtAndWait</td>
+	<td>//button</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
